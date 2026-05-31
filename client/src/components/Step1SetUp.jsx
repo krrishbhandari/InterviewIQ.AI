@@ -135,7 +135,8 @@ function Step1SetUp({ onStart }) {
                                 onChange={(e) => setExperience(e.target.value)} value={experience}/>
                         </div>
 
-                         <select onChange={(e) => setMode(e.target.value)}  value={mode} className="w-full py-3 px-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 outline-none transition">
+                         <select onChange={(e) => setMode(e.target.value)} placeholder="Select Interview Type" value={mode} className="w-full py-3 px-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 outline-none transition">
+                                    <option value="" disabled> Select Interview Type </option>
                                     <option value="Technical">Technical Interview</option>
                                     <option value="HR">HR Interview</option>
                         </select>
