@@ -195,7 +195,7 @@ function Step3Report({ report }) {
 
                 </div>
 
-                <button className="bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl shadow-md transition-all duration-300 font-semibold text-sm sm:text-base text-nowrap">DownLoaD PDF</button>
+                <button onClick={downloadPDF} className="bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl shadow-md transition-all duration-300 font-semibold text-sm sm:text-base text-nowrap">Download PDF</button>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -271,7 +271,7 @@ function Step3Report({ report }) {
                               <div key={i} className='bg-gray-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-200'>
                                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                                   <div>
-                                    <p clasName='text-xs text-gray-400'>Question {i + 1}</p>
+                                    <p className='text-xs text-gray-400'>Question {i + 1}</p>
 
                                     <p className="font-semibold text-gray-800 text-sm sm:text-base leading-relaxed">{q.question || "Question not available"}</p>
                                   </div>
