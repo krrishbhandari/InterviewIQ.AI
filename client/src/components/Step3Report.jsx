@@ -139,9 +139,44 @@ function Step3Report({ report }) {
        currentY += 50;
 
        //====================Question Table ======================
-       
+        autoTable(doc, {
+            startY: currentY,
+            margin: { left: margin, right: margin },
 
-    
+            head: [["#", "Question", "Score", "Feedback"]],
+
+            body: questionWiseScore.map((q, i) => [
+                `${i + 1}`,
+                q.question,
+                `${q.score} / 10`,
+                q.feedback
+            ]),
+
+         styles: {
+            fontSize: 9,
+            cellPadding: 5,
+            valign: "top",
+         },
+
+         headStyles: {
+             fillColor: [34, 197, 94],
+             textColor: 255,
+             halign: "center",
+        },
+
+        columnStyles: {
+          0: { cellWidth: 10, halign: "center" }, // index
+          1: { cellWidth: 55 },                   // question
+          2: { cellWidth: 20, halign: "center" }, // score
+          3: { cellWidth: "auto" },               // feedback
+        },
+
+        alternateRowStyles: {
+           fillColor: [249, 250, 251],
+         },
+});
+
+       doc.save("AI_Interview_Report.pdf");
    }
    
 
