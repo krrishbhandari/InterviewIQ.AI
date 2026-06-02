@@ -143,7 +143,7 @@ function Step3Report({ report }) {
             startY: currentY,
             margin: { left: margin, right: margin },
 
-            head: [["#", "Question", "Score", "Feedback"]],
+            head: [["Sr.no", "Question", "Score", "Feedback"]],
 
             body: questionWiseScore.map((q, i) => [
                 `${i + 1}`,
