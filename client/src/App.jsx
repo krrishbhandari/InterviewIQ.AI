@@ -10,7 +10,7 @@ import axios from "axios";
 import InterviewHistory from "./pages/InterviewHistory";
 import Pricing from "./pages/Pricing";
 import InterviewReport from "./pages/InterviewReport";
-export const ServerUrl = "https://interviewiq-ai-server1.onrender.com";
+export const ServerUrl = import.meta.env.VITE_SERVER_URL || "https://interviewiq-ai-server1.onrender.com";
 
 function App() {
 
