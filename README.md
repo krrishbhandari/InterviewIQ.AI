@@ -1,11 +1,4 @@
----
----
----
----
----
----
----
----
+
 # InterviewIQ — AI-powered interview practice
 
 > Practice realistic interviews with voice-enabled AI, resume-driven questions, and downloadable performance reports.
