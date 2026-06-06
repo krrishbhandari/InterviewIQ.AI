@@ -36,7 +36,7 @@ function Home() {
 
                 <div className="text-center mb-28">
                     <motion.h1 className="text-4xl md:text-6xl font-semibold leading-tight max-w-4xl mx-auto">
-                        Practice Interviews with 8
+                        Practice Interviews with
                         <span className="relative inline-block">
                             <span className="bg-green-100 text-green-600 px-5 py-1 rounded-full">
                                 AI Intelligence
