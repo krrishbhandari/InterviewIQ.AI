@@ -1,58 +1,63 @@
-# Interview AI — AI-powered interview practice
+---
+---
+---
+---
+---
+---
+---
+---
+# InterviewIQ — AI-powered interview practice
 
-> Practice realistic interviews, get AI-generated questions from your resume, receive voice-based interview experience, and download a professional performance report.
+> Practice realistic interviews with voice-enabled AI, resume-driven questions, and downloadable performance reports.
 
 ---
 
-## 🔗 Quick Links
-
-- Local app: `http://localhost:5173` (frontend)
-- API base: `http://localhost:8080/api` (backend)
-- See: [client](client) and [server](server) folders
+**Live Demo:** [interviewiq-aiclient2.onrender.com](https://interviewiq-aiclient2.onrender.com)
 
 ---
 
 ## 🎯 Problem Statement
 
-Candidates lack affordable, realistic, and actionable interview practice with clear scoring and human-like feedback. Manual mock interviews are time-consuming and inconsistent, and automated tools rarely provide structured improvement plans.
+Digital interview practice is often unaffordable, inconsistent, or non-actionable. Candidates need realistic, repeatable practice with clear scoring and improvement guidance.
 
-## 💡 What this project does
+## 💡 Solution
 
-This project provides a complete AI-powered interview practice platform that:
+InterviewIQ delivers an end-to-end AI interview platform that:
 
-- Extracts structured data from uploaded resumes (PDF) to build context.
-- Generates a tailored set of interview questions using an AI service.
-- Runs voice-enabled interviews (speech synthesis + speech recognition).
-- Evaluates answers via AI to produce scores and concise human-like feedback.
-- Aggregates results into downloadable PDF reports and analytics.
-
----
-
-## 🚀 Key Features (from code)
-
-- Resume analysis: Server-side PDF parsing with `pdfjs-dist` and AI (`/api/interview/resume`).
-- Question generation: `POST /api/interview/generate-questions` creates 5 questions with time limits and difficulty progression.
-- Voice interview: Frontend uses `SpeechSynthesis` and `webkitSpeechRecognition` to speak questions and capture answers.
-- Auto-evaluation: `POST /api/interview/submit-answer` sends answers to the AI evaluator and stores scores/feedback.
-- Interview lifecycle: `finishInterview` computes overall metrics and `GET /api/interview/report/:id` returns results for reporting.
-- Reports: Client builds visual analytics (Recharts) and exports a PDF via `jsPDF` + `jspdf-autotable`.
-- User & credits: Backend enforces credit usage when generating questions; user state stored in MongoDB.
-- Payments: Razorpay integration available under `server` (payment routes/services).
+- Extracts structured context from uploaded resumes.
+- Generates tailored interview questions with progressive difficulty.
+- Runs voice-driven interviews (speech synthesis + recognition).
+- Evaluates answers using AI to produce scores and human-like feedback.
+- Exports professional PDF reports and analytics.
 
 ---
 
-## 🛠️ Tech Stack (seen in repository)
+## 🚀 Key Features
 
-- Frontend: React, Vite, TailwindCSS, Recharts, jsPDF
-- Backend: Node.js (ESM), Express, Mongoose (MongoDB)
-- AI integration: `server/services/openRouter.service.js` (AI request wrapper)
-- PDF parsing: `pdfjs-dist` for resume text extraction
-- Auth: JWT + Firebase hooks in client (social login)
-- Payments: Razorpay (`razorpay` package)
+- AI Resume Analysis: Server-side PDF parsing and structured context extraction.
+- Question Generation: `POST /api/interview/generate-questions` — AI-backed question sets.
+- Voice Interview: Browser `SpeechSynthesis` and `webkitSpeechRecognition` integration.
+- Auto Evaluation: `POST /api/interview/submit-answer` — AI evaluates and stores scores/feedback.
+- Reports & Analytics: Visual reports (Recharts) and PDF export (`jsPDF`, `jspdf-autotable`).
+- Usage Controls: Credits and user state stored in MongoDB; Razorpay payments supported.
 
 ---
 
-## ⚡ Quick Start (run locally)
+## ✅ Google Technologies Used
+
+| Google Technology | Implementation Detail | Status |
+|---|---|---|
+| Firebase Authentication | Identity management and social login hooks in client | Active |
+| Google Cloud (target) | Suggested for serverless deployment to handle bursty ML workloads | Target |
+| Chrome DevTools Protocol | Evidence engine and automated PDF renders (used in original project) | Active |
+| Google Search API | Smart scrapers / monitoring (rate-limit aware) | Optimized |
+| Google Vision / Hybrid matching | pHash + transformers used for frame similarity in original project | Optimized |
+
+---
+
+## ⚡ Quick Start
+
+Clone and run locally:
 
 ```bash
 # Clone repository
@@ -71,9 +76,9 @@ npm install
 npm run dev
 ```
 
-### Important environment variables
+### Required environment variables
 
-Server (.env) — minimal set used by this repo:
+Server (.env):
 
 ```
 MONGO_URI=your_mongo_uri
@@ -92,21 +97,21 @@ VITE_API_URL=http://localhost:8080/api
 
 ---
 
-## Project Structure (high level)
+## Project Structure
 
 - `client/` — React frontend (pages: `InterviewPage`, `InterviewReport`, `InterviewHistory`)
-- `client/src/components` — Step components (`Step1SetUp`, `Step2Interview`, `Step3Report`), `Timer`, `AuthModel`
+- `client/src/components` — `Step1SetUp`, `Step2Interview`, `Step3Report`, `Timer`, `AuthModel`
 - `server/` — Express backend (`routes`, `controllers`, `models`, `services`)
-- Key API endpoints: `/api/interview/*`, `/api/auth/*`, `/api/payment/*`, `/api/user/*`
+- Key endpoints: `/api/interview/*`, `/api/auth/*`, `/api/payment/*`, `/api/user/*`
 
 ---
 
-## Notes & Next steps I recommend
+## Notes & Next Steps
 
 - Add README badges for build, license, and dependencies.
-- Add `.env.example` files for `client` and `server` with required variables.
-- Add a short demo GIF or host a staging deployment for quick demos.
+- Add `.env.example` files for `client` and `server`.
+- Add a short demo GIF or hosted staging link for quick demos (live demo is provided above).
 
 ---
 
-**Built with ❤️ by  Krish Bhandari ;**
+**Built with ❤️ by Krish Bhandari**
